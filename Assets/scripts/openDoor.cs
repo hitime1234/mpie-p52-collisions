@@ -8,6 +8,13 @@ public class OpenDoor : MonoBehaviour
         animation.Play("OpenDoor");
     }
 
+    void OnTriggerExit(Collider OtherObj){
+        GameObject parent = transform.parent.gameObject;       
+        Animation animation = parent.GetComponent<Animation>();       
+        animation.Play("Close");
+    }
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
